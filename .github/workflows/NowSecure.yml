@@ -48,4 +48,15 @@ jobs:
       - name: Install ripgrep
         run: sudo apt-get install -y ripgrep
         
-      
+  
+   name: Run NowSecure
+        uses: nowsecure/nowsecure-action@v2
+        with:
+          token: ${{ secrets.NS_TOKEN }}
+          app_file: k9mail-debug.apk                 # Update this to a path to your .ipa or .apk
+          group_id: "39be630d-3009-43e9-ab5b-c9c871622c0d"                 # Update this to your desired Platform group ID
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: NowSecure.sarif
