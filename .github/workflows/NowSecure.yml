@@ -49,8 +49,9 @@ jobs:
         run: sudo apt-get install -y ripgrep
         
   
-   name: Run NowSecure
+      - name: NowSecure
         uses: nowsecure/nowsecure-action@v2
+        timeout-minutes: 120
         with:
           token: ${{ secrets.NS_TOKEN }}
           app_file: k9mail-debug.apk                 # Update this to a path to your .ipa or .apk
