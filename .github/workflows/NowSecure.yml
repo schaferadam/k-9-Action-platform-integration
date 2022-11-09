@@ -49,22 +49,9 @@ jobs:
         run: sudo apt-get install -y ripgrep
         
       - name: NowSecure
-        uses: nowsecure/nowsecure-action@v1
+        uses: nowsecure/nowsecure-action@v2
         timeout-minutes: 120
         with:
          token: ${{ secrets.NS_TOKEN }}
          app_file: k9mail-debug.apk		# REPLACE: The path to an .ipa or .apk
-         group_id: "602abed9-4c66-453d-8431-da0195b682de"				# REPLACE: NowSecure Group ID
-
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: NowSecure.sarif
-
-      - name: Upload SARIF to artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: NowSecure.sarif
-          path: ./NowSecure.sarif
-        
-    
+         group_id: "39be630d-3009-43e9-ab5b-c9c871622c0d"				# REPLACE: NowSecure Group ID
