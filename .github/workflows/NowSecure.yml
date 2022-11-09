@@ -47,10 +47,9 @@ jobs:
        # NOTE: ripgrep is required for line-of-code identification.
       - name: Install ripgrep
         run: sudo apt-get install -y ripgrep
-        
-  
+
       - name: NowSecure
-        uses: nowsecure/nowsecure-action@v2
+        uses: nowsecure/nowsecure-action@v1
         timeout-minutes: 120
         with:
           token: ${{ secrets.NS_TOKEN }}
